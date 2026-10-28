@@ -72,3 +72,7 @@ document.querySelector('.js-rock-button')
 function updateResult(result){
   document.querySelector('.js-result').innerHTML=`${result}`;
 }
+function updateScoreElement() {
+  document.querySelector(".js-score").innerHTML =
+    `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+}
