@@ -3,6 +3,7 @@ const score = JSON.parse(localStorage.getItem("Score")) || {
   losses: 0,
   ties: 0,
 };
+updateScoreElement();
 
 function pickComputerMove() {
   const randomNumber = Math.random();
@@ -56,6 +57,8 @@ function playGame(playerMove) {
     score.ties++;
   }
   updateResult(result);
+  updateScoreElement();
+  displayMove(playerMove, computerMove, result);
 
   localStorage.setItem("Score", JSON.stringify(score));
 }
@@ -63,11 +66,11 @@ function playGame(playerMove) {
 document.querySelector('.js-rock-button')
 .addEventListener('click',()=>playGame('rock'));
 
-document.querySelector('.js-rock-button')
-.addEventListener('click',()=>playGame('rock'));
+document.querySelector('.js-paper-button')
+.addEventListener('click',()=>playGame('paper'));
 
-document.querySelector('.js-rock-button')
-.addEventListener('click',()=>playGame('rock'));
+document.querySelector('.js-scissors-button')
+.addEventListener('click',()=>playGame('scissors'));
 
 function updateResult(result){
   document.querySelector('.js-result').innerHTML=`${result}`;
