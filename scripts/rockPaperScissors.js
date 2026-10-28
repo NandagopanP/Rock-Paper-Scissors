@@ -76,3 +76,8 @@ function updateScoreElement() {
   document.querySelector(".js-score").innerHTML =
     `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
 }
+
+function displayMove(playerMove, computerMove, result) {
+  document.querySelector(".js-moves").innerHTML =
+    `You picked <img src="/Images/${playerMove}-emoji.png" alt="" class="move-icon"> - Computer picked <img src="/Images/${computerMove}-emoji.png" alt="" class="move-icon">`;
+}
