@@ -55,6 +55,20 @@ function playGame(playerMove) {
   } else {
     score.ties++;
   }
+  updateResult(result);
 
   localStorage.setItem("Score", JSON.stringify(score));
+}
+
+document.querySelector('.js-rock-button')
+.addEventListener('click',()=>playGame('rock'));
+
+document.querySelector('.js-rock-button')
+.addEventListener('click',()=>playGame('rock'));
+
+document.querySelector('.js-rock-button')
+.addEventListener('click',()=>playGame('rock'));
+
+function updateResult(result){
+  document.querySelector('.js-result').innerHTML=`${result}`;
 }
