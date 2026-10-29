@@ -64,13 +64,13 @@ function playGame(playerMove) {
 }
 
 document.querySelector('.js-rock-button')
-.addEventListener('click',()=>playGame('rock'));
+.addEventListener('click',()=>playGame('Rock'));
 
 document.querySelector('.js-paper-button')
-.addEventListener('click',()=>playGame('paper'));
+.addEventListener('click',()=>playGame('Paper'));
 
 document.querySelector('.js-scissors-button')
-.addEventListener('click',()=>playGame('scissors'));
+.addEventListener('click',()=>playGame('Scissors'));
 
 function updateResult(result){
   document.querySelector('.js-result').innerHTML=`${result}`;
@@ -82,5 +82,5 @@ function updateScoreElement() {
 
 function displayMove(playerMove, computerMove, result) {
   document.querySelector(".js-moves").innerHTML =
-    `You picked <img src="/Images/${playerMove}-emoji.png" alt="" class="move-icon"> - Computer picked <img src="/Images/${computerMove}-emoji.png" alt="" class="move-icon">`;
+    `You picked <img src="/images/${playerMove.toLowerCase()}-emoji.png" alt="" class="move-icon"> - Computer picked <img src="/images/${computerMove.toLowerCase()}-emoji.png" alt="" class="move-icon">`;
 }
