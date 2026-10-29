@@ -84,3 +84,26 @@ function displayMove(playerMove, computerMove, result) {
   document.querySelector(".js-moves").innerHTML =
     `You picked <img src="/images/${playerMove.toLowerCase()}-emoji.png" alt="" class="move-icon"> - Computer picked <img src="/images/${computerMove.toLowerCase()}-emoji.png" alt="" class="move-icon">`;
 }
+
+  let isAutoPlaying = false;
+      let intervalId;
+
+      function autoPlay() {
+        isAutoPlaying = !isAutoPlaying;
+
+        if (isAutoPlaying) {
+          intervalId = setInterval( ()=>{
+            const playerMove = pickComputerMove();
+            playGame(playerMove);
+          }, 1000);
+        } else {
+          clearInterval(intervalId);
+        }
+
+        autoPlayButton();
+      }
+
+        function autoPlayButton() {
+        const buttonElem = document.querySelector('.autoplay-b');
+        buttonElem.innerHTML = isAutoPlaying ? 'Pause AutoPlay' : 'Auto Play';
+      }
